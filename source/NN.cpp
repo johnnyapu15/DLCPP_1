@@ -1,6 +1,7 @@
-#include <Eigen/Dense>
+
 #include <iostream>
-#include "header/json.hpp"
+#include "./../header/Eigen/Dense"
+#include "./../header/json.hpp"
 
 
 using namespace nlohmann;
@@ -12,7 +13,7 @@ VectorXd Tanh(VectorXd _input) {
 	return VectorXd(Eigen::tanh(_input.array()));
 }
 VectorXd Tanh_derive(VectorXd _input) {
-	return VectorXd(_input.count).Ones - (Tanh(_input) * Tanh(_input));
+	return VectorXd(_input.count()).Ones - (Tanh(_input) * Tanh(_input));
 }
 
 
@@ -35,7 +36,7 @@ public:
 	void feedForward(VectorXd _input) {
 		o = activation(_input);
 	}
-	VectorXd derive(VectorXd _input) {
+	VectorXd calcDerive(VectorXd _input) {
 		return derive(_input);
 	}
 
@@ -81,7 +82,7 @@ public:
 	void feedForward(VectorXd _input) {
 		//inputLayer를 가지고 있으니, 그 값을 이용해 계산한다.
 		// 결과값은 레이어 내부에 저장한다.
-		this->net = w.transpose * _input + b;
+		this->net = w.transpose() * _input + b;
 	}
 
 	void backpropagation(VectorXd _input, VectorXd _derive, Layer* outputLayer) {

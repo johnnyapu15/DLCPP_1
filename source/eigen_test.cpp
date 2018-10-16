@@ -1,4 +1,5 @@
-#include "NN.cpp"
+
+#include "./../header/Eigen/Dense"
 #include <iostream>
 #include <vector>
 
