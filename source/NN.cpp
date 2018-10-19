@@ -13,7 +13,10 @@ VectorXd Tanh(VectorXd _input) {
 	return VectorXd(Eigen::tanh(_input.array()));
 }
 VectorXd Tanh_derive(VectorXd _input) {
-	return VectorXd(_input.count()).Ones - (Tanh(_input) * Tanh(_input));
+	VectorXd tmp = Tanh(_input).cwiseProduct(Tanh(_input));
+	return VectorXd (_input - tmp);
+	//return VectorXd(2);
+
 }
 
 
@@ -96,3 +99,28 @@ class NeuralNetwork {
 	// ÇÔ¼ö: forward, backward
 
 };
+
+
+
+
+///////////////Spike Neural Network Implementation //////////////////
+// node(w[in_node][synapse], net) - synapse (delays[])
+
+class SpikeNeuron {
+private:
+	MatrixXd w;
+	double net;
+public:
+
+};
+
+//More try more intense
+class Synapse {
+private:
+	VectorXd delay;
+
+public:
+
+};
+
+

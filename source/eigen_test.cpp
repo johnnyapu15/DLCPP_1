@@ -12,12 +12,12 @@ int main() {
 	w /= 5;
 	VectorXf b = VectorXf::Random(4);
 	
-	Vector2f x(1, 2);
-
+	VectorXf x(2);
+	x = Vector2d (1, 3);
 	
 
 
-	cout << "HERE \n" << w << "\n\n" << b << "\n\n" << w*x + b << endl;
+	cout << "HERE \n" << w << "\n\n" << b << "\n\n" << w*x + b << "\n\n" << x - x << endl;
 
 	return 0;
 
