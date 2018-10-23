@@ -1,5 +1,6 @@
 
-#include "./../header/Eigen/Dense"
+
+#include "./../header/pretchel.h"
 #include <iostream>
 #include <vector>
 
@@ -7,17 +8,17 @@ using namespace std;
 using namespace Eigen;
 
 int main() {
-	MatrixXf w = MatrixXf::Zero(4,2);
+	MatrixXd w = MatrixXd::Zero(4,2);
 	w.setRandom();
 	w /= 5;
-	VectorXf b = VectorXf::Random(4);
+	VectorXd b = VectorXd::Random(4);
 	
-	VectorXf x(2);
+	VectorXd x(2);
 	x = Vector2d (1, 3);
 	
 
-
-	cout << "HERE \n" << w << "\n\n" << b << "\n\n" << w*x + b << "\n\n" << x - x << endl;
+	
+	cout << "HERE \n" << w << "\n\n" << b << "\n\n" << w*x + b << "\n\n" << Tanh_derive(x) << endl;
 
 	return 0;
 

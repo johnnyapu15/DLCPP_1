@@ -14,7 +14,7 @@ VectorXd Tanh(VectorXd _input) {
 }
 VectorXd Tanh_derive(VectorXd _input) {
 	VectorXd tmp = Tanh(_input).cwiseProduct(Tanh(_input));
-	return VectorXd (_input - tmp);
+	return VectorXd (_input - tmp);  
 	//return VectorXd(2);
 
 }
