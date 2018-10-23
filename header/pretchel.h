@@ -13,8 +13,8 @@ using namespace std;
 using namespace Eigen;
 
 
-VectorXd Tanh(VectorXd _input);
-VectorXd Tanh_derive(VectorXd _input);
+VectorXd tanh(VectorXd _input);
+VectorXd tanh_derive(VectorXd _input);
 
 
 

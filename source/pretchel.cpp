@@ -6,18 +6,20 @@
 // Activation function
 
 	// Tanh
-	VectorXd Tanh(VectorXd _input) {
+	VectorXd tanh(VectorXd _input) {
 		return VectorXd(Eigen::tanh(_input.array()));
 	}
-	VectorXd Tanh_derive(VectorXd _input) {
-		VectorXd tmp = Tanh(_input).cwiseProduct(Tanh(_input));
+	VectorXd tanh_derive(VectorXd _input) {
+		VectorXd tmp = tanh(_input).cwiseProduct(tanh(_input));
 		return VectorXd (_input - tmp);  
 	}
 
 
 // Error function
 
+	VectorXd softmax(VectorXd _input, ) {
 
+	}
 
 
 
